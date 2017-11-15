@@ -1,0 +1,23 @@
+apply plugin: 'ear'
+
+dependencies {
+	deploy project(path: ':usuario-war', configuration: 'archives')
+	deploy project(path: ':usuario-ejb')
+	earlib project(':usuario-api')
+	earlib project(':usuario-impl')
+	earlib project(':usuario-ejb-client')
+}
+
+ear {
+	deploymentDescriptor {
+		def warName = project(':usuario-war').name
+		def warVersion = project(':usuario-war').version
+		def warFileName = warName + '-' + warVersion + '.war'
+		webModule(warFileName, 'usuarios')
+
+		def ejbName = project(':usuario-ejb').name
+		def ejbVersion = project(':usuario-ejb').version
+		def ejbFileName = ejbName + '-' + ejbVersion + '.jar'
+		module(ejbFileName, 'ejb')
+	}
+}

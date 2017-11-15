@@ -1,0 +1,1 @@
+include "usuario-ear", "usuario-war", "usuario-api", "usuario-impl", "usuario-ejb", "usuario-ejb-client"

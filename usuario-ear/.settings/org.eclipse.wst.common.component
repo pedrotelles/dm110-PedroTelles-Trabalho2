@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+	<wb-module deploy-name="usuario-ear">
+		<dependent-module deploy-path="/" handle="module:/resource/usuario-war/usuario-war">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/" handle="module:/resource/usuario-ejb/usuario-ejb">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/lib" handle="module:/resource/usuario-api/usuario-api">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/lib" handle="module:/resource/usuario-impl/usuario-impl">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/lib" handle="module:/resource/usuario-ejb-client/usuario-ejb-client">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+	</wb-module>
+</project-modules>
